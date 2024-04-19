@@ -1,5 +1,6 @@
 // Runtime environments
 export enum NodeEnv {
+  TEST = 'test',
   DEV = 'development',
   PROD = 'production',
 }
@@ -28,4 +29,13 @@ export class Constants {
 
   // Authentication secret
   static TOKEN_SECRET: string = process.env.TOKEN_SECRET ?? 'secret'
+
+  // AWS S3
+  static BUCKET_NAME: string = process.env.BUCKET_NAME ?? ''
+
+  static BUCKET_REGION: string = process.env.BUCKET_REGION ?? ''
+
+  static BUCKET_ACCESS_KEY_ID: string = process.env.BUCKET_ACCESS_KEY_ID ?? ''
+
+  static SECRET_ACCESS_KEY: string = process.env.SECRET_ACCESS_KEY ?? ''
 }
