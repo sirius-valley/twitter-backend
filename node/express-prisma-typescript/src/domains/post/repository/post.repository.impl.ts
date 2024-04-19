@@ -31,6 +31,9 @@ export class PostRepositoryImpl implements PostRepository {
           id: 'asc'
         }
       ]
+      // include: {
+      //   author: true
+      // }
     })
     return posts.map(post => new PostDTO(post))
   }
