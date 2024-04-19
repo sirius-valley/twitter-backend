@@ -9,3 +9,10 @@ export DATABASE_URL="postgresql://${POSTGRES_USER}:${POSTGRES_PASSWORD}@localhos
 # connects to the dockerized local postgres database
 DB_DOCKER_SERVICE="db"
 export DOCKER_DATABASE_URL="postgresql://${POSTGRES_USER}:${POSTGRES_PASSWORD}@${DB_DOCKER_SERVICE}/${POSTGRES_DB}?connect_timeout=600"
+
+# basic config
+export NODE_ENV="development"
+export LOG_LEVEL="info"
+export PORT="8080"
+export CORS_WHITELIST="http://localhost:3000"
+export TOKEN_SECRET="secret"
