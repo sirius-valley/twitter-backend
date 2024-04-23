@@ -46,11 +46,4 @@ userRouter.delete('/me', async (req: Request, res: Response) => {
   return res.status(HttpStatus.OK)
 })
 
-userRouter.get('/search', async (req: Request, res: Response) => {
-  const { username } = req.params
-  const { limit, skip } = req.query as Record<string, string>
 
-  const users = await service.getUsersByUsername(username, { limit: Number(limit), skip: Number(skip) })
-
-  return res.status(HttpStatus.OK).json(users)
-})
