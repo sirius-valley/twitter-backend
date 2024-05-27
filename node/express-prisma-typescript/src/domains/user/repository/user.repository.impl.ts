@@ -40,9 +40,8 @@ export class UserRepositoryImpl implements UserRepository {
         }
       ]
     })
-    return users.map(user => new UserDTO(user))
+    return users.map((user) => new UserDTO(user))
   }
-
   async getByEmailOrUsername (email?: string, username?: string): Promise<ExtendedUserDTO | null> {
     const user = await this.db.user.findFirst({
       where: {
