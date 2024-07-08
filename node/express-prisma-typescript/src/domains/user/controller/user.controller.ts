@@ -38,10 +38,12 @@ userRouter.get('/:userId', async (req: Request, res: Response) => {
   return res.status(HttpStatus.OK).json(user)
 })
 
-userRouter.delete('/', async (req: Request, res: Response) => {
+userRouter.delete('/me', async (req: Request, res: Response) => {
   const { userId } = res.locals.context
 
   await service.deleteUser(userId)
 
   return res.status(HttpStatus.OK)
 })
+
+

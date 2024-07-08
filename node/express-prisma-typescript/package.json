@@ -6,7 +6,7 @@
   "scripts": {
     "build": "tsc && tsc-alias",
     "prod": "yarn db:migrate && node dist/server.js",
-    "dev": "yarn db:migrate && yarn db:generate && nodemon -q",
+    "dev": "yarn db:migrate && yarn db:generate && nodemon -L",
     "lint": "eslint --fix && pretty-quick && prisma format",
     "db:migrate": "prisma migrate deploy",
     "db:make-migrations": "prisma migrate dev",
@@ -19,6 +19,7 @@
     "class-validator": "^0.14.0",
     "cookie-parser": "^1.4.6",
     "cors": "^2.8.5",
+    "cross-env": "^7.0.3",
     "eslint": "^8.0.1",
     "express": "^4.18.2",
     "express-async-errors": "^3.1.1",
@@ -29,6 +30,9 @@
     "signale": "^1.4.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.23.3",
+    "@babel/preset-env": "^7.23.3",
+    "@babel/preset-typescript": "^7.23.3",
     "@types/bcrypt": "^5.0.0",
     "@types/cookie-parser": "^1.4.3",
     "@types/cors": "^2.8.13",
